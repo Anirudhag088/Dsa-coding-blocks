@@ -1,0 +1,31 @@
+package loveBabber450;
+import java.util.*;
+public class Kthsmallestelement {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+        Scanner scn = new Scanner(System.in);
+        int n = scn.nextInt();
+        int arr [] = new int [n];
+        for(int i = 0; i < arr.length; i++) {
+        	arr[i] = scn.nextInt();
+        }
+        int k = scn.nextInt();
+        sortArr(arr);
+        System.out.println(arr[k-1]);
+	}
+	 
+	public static void sortArr(int [] arr) {
+     for(int i = 0; i < arr.length; i++) {
+    	 for(int j = i + 1; j < arr.length; j++) {
+    		 if(arr[i] > arr[j]) {
+    			 int temp = arr[i];
+    			 arr[i] = arr[j];
+    			 arr[j] = temp;
+    		 }
+    	 }
+     }
+	}
+	
+
+}
