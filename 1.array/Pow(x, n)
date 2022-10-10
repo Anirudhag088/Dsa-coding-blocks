@@ -1,0 +1,29 @@
+class Solution {
+    public double myPow(double x, int n) {
+        if(n < 0){
+          double temp = power(x, -n);
+            return 1/temp;
+        }
+        
+        double ans = power(x,n);
+        return ans;
+    } 
+    
+    public double power(double x, int n){
+        if(n == 0){
+            return 1;
+        }
+        
+       double temp = power(x, n/2);
+        
+        if(n % 2 == 0){
+           temp = temp * temp;
+        }else{
+            temp = temp * temp * x;
+        }
+        
+        return temp;
+    }
+    
+
+}
